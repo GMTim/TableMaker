@@ -18,6 +18,7 @@ export const load = () => {
         }
     })
     itemButtonsLoad(() => {
+        Table.clear()
         let options = new FactoryOptions(sidesSelector.val(), Weight.allWeights)
         let table = Factory.create(options)
         for (let item of table.items) {
