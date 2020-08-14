@@ -8,7 +8,7 @@ export const Factory = {
 }
 const PrivateFactory = {
     weights: (options) => {
-        let total = options.weights.reduce((a, b) => { return a + b }, 0)
+        let total = options.weights.reduce((a, b) => { return parseInt(a) + parseInt(b) }, 0)
         let value = Math.floor(options.sides / total)
         let leftover = options.sides - (value * total)
         return {value: value, leftover: leftover}
