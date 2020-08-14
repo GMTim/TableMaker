@@ -4,13 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/css/main.css">
 
-    <title>Table Factory</title>
+    <title>Table Maker</title>
 </head>
 <body>
     <div class="container">
-        <h1>Table Factory</h1>
+        <h1>Table Maker</h1>
         <hr />
+        <form>
+            <h3>Options</h3>
+            <div class="form-group">
+                <label for="numberOfSides">Die To Roll</label>
+                <select class="form-control" id="numberOfSides">
+                    <option value="2">d2</option>
+                    <option value="4">d4</option>
+                    <option value="6">d6</option>
+                    <option value="8">d8</option>
+                    <option value="10">d10</option>
+                    <option value="12">d12</option>
+                    <option value="20">d20</option>
+                    <option value="100" selected>d100</option>
+                    <option value="1000">d1000</option>
+                </select>
+                <br />
+                <label for="addRowsButtons">Add Rows</label>
+                <div class="btn-group" role="group" id="addRowsButtons">
+                    <button type="button" class="btn btn-dark row-add-btn" value="1">1</button>
+                    <button type="button" class="btn btn-dark row-add-btn" value="2">2</button>
+                    <button type="button" class="btn btn-dark row-add-btn" value="3">3</button>
+                    <button type="button" class="btn btn-dark row-add-btn" value="4">4</button>
+                    <button type="button" class="btn btn-dark row-add-btn" value="5">5</button>
+                  </div>
+            </div>
+            <div class="hidden" id="weights">
+                <h3>Weights</h3>
+                <div class="form-group" id="itemList">
+                    <div id="rowItem">
+                        <label class="hidden">Item #</label>
+                        <select class="form-control row-weight">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-dark" id="generateBtn">Generate</button>
+                    <button type="button" class="btn btn-dark" id="clearButton">Clear</button>
+                </div>
+            </div>
+        </form>
+        <div id="results" class="hidden">
+            <table class="table table-dark text-center">
+                <tbody>
+                    <tr id="tableItem">
+                        <td class="lower">Item 1</td>
+                        <td class="upper">Item 2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
